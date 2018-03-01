@@ -1,4 +1,6 @@
 ActiveAdmin.register User do
+
+ permit_params :email, :password, :reviews_completed, :avgratings
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
