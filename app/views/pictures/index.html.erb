@@ -19,7 +19,7 @@
       <% @pictures.each do |picture| %>
       <tr>
         <td><%= picture.comment %></td>
-        <td><%= picture.review_id %></td>
+        <td><%= picture.review.restaurant_id %></td>
         <td><%= picture.image_url %></td>
         <td><%= picture.caption %></td>
         <td>
