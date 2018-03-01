@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @picture.errors.any? %>
+  <% @picture.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Picture #<%= @picture.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_picture/<%= @picture.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for comment -->
+      <div class="form-group">
+        <label for="comment" class="control-label">
+          Comment
+        </label>
+
+        <input type="text" id="comment" name="comment" placeholder="Comment" class="form-control" value="<%= @picture.comment %>">
+      </div>
+
+      <!-- Label and input for review_id -->
+      <div class="form-group">
+        <label for="review_id" class="control-label">
+          Review
+        </label>
+
+        <input type="text" id="review_id" name="review_id" placeholder="Review" class="form-control" value="<%= @picture.review_id %>">
+      </div>
+
+      <!-- Label and input for image_url -->
+      <div class="form-group">
+        <label for="image_url" class="control-label">
+          Image url
+        </label>
+
+        <input type="text" id="image_url" name="image_url" placeholder="Image url" class="form-control" value="<%= @picture.image_url %>">
+      </div>
+
+      <!-- Label and input for caption -->
+      <div class="form-group">
+        <label for="caption" class="control-label">
+          Caption
+        </label>
+
+        <input type="text" id="caption" name="caption" placeholder="Caption" class="form-control" value="<%= @picture.caption %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Picture
+      </button>
+      or
+      <a href="/pictures/<%= @picture.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
