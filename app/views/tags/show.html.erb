@@ -23,3 +23,34 @@
     </div>
   </div>
 </div>
+
+<!-- A Tag has many descriptors -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Descriptors
+      </li>
+
+      <% @tag.descriptors.each do |descriptor| %>
+        <li class="list-group-item">
+          <a href="/descriptors/<%= descriptor.id %>">
+            <%= descriptor.tag_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/descriptors/<%= descriptor.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/descriptors/<%= descriptor.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_descriptor/<%= descriptor.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
