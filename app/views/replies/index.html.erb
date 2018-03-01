@@ -17,7 +17,13 @@
 
       <% @replies.each do |reply| %>
       <tr>
-        <td><%= reply.user.email %></td>
+        <td>
+          <% if reply.user.present? %>
+            <a href="/users/<%= reply.user.id %>">
+              <%= reply.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= reply.review_id %></td>
         <td><%= reply.content %></td>
         <td>

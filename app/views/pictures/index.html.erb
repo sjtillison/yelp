@@ -19,7 +19,13 @@
       <% @pictures.each do |picture| %>
       <tr>
         <td><%= picture.comment %></td>
-        <td><%= picture.review.restaurant_id %></td>
+        <td>
+          <% if picture.review.present? %>
+            <a href="/reviews/<%= picture.review.id %>">
+              <%= picture.review.restaurant_id %>
+            </a>
+          <% end %>
+        </td>
         <td><%= picture.image_url %></td>
         <td><%= picture.caption %></td>
         <td>

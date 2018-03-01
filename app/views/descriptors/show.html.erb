@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Tag</dt>
-      <dd><%= @descriptor.tag_id %></dd>
+      <dd>
+        <% if @descriptor.tag.present? %>
+          <a href="/tags/<%= @descriptor.tag_id %>">
+            <%= @descriptor.tag.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Restaurant</dt>
-      <dd><%= @descriptor.restaurant_id %></dd>
+      <dd>
+        <% if @descriptor.restaurant.present? %>
+          <a href="/restaurants/<%= @descriptor.restaurant_id %>">
+            <%= @descriptor.restaurant.name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

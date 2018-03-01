@@ -16,8 +16,20 @@
 
       <% @descriptors.each do |descriptor| %>
       <tr>
-        <td><%= descriptor.tag.name %></td>
-        <td><%= descriptor.restaurant.name %></td>
+        <td>
+          <% if descriptor.tag.present? %>
+            <a href="/tags/<%= descriptor.tag.id %>">
+              <%= descriptor.tag.name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if descriptor.restaurant.present? %>
+            <a href="/restaurants/<%= descriptor.restaurant.id %>">
+              <%= descriptor.restaurant.name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/descriptors/<%= descriptor.id %>" class="btn btn-primary">Show</a>
           <a href="/descriptors/<%= descriptor.id %>/edit" class="btn btn-warning">Edit</a>

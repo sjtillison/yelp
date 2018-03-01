@@ -34,7 +34,13 @@
       <tr>
         <td><%= restaurant.name %></td>
         <td><%= restaurant.address %></td>
-        <td><%= restaurant.neighborhood.name %></td>
+        <td>
+          <% if restaurant.neighborhood.present? %>
+            <a href="/neighborhoods/<%= restaurant.neighborhood.id %>">
+              <%= restaurant.neighborhood.name %>
+            </a>
+          <% end %>
+        </td>
         <td><%= restaurant.city %></td>
         <td><%= restaurant.total_stars %></td>
         <td><%= restaurant.description %></td>
