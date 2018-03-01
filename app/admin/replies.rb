@@ -1,4 +1,6 @@
 ActiveAdmin.register Reply do
+
+ permit_params :owner_id, :review_id, :content
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
