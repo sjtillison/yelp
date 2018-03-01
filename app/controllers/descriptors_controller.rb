@@ -1,6 +1,6 @@
 class DescriptorsController < ApplicationController
   def index
-    @descriptors = Descriptor.all
+    @descriptors = Descriptor.page(params[:page]).per(10)
 
     render("descriptors/index.html.erb")
   end
