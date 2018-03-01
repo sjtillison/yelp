@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Descriptor resource:
+  # CREATE
+  get "/descriptors/new", :controller => "descriptors", :action => "new"
+  post "/create_descriptor", :controller => "descriptors", :action => "create"
+
+  # READ
+  get "/descriptors", :controller => "descriptors", :action => "index"
+  get "/descriptors/:id", :controller => "descriptors", :action => "show"
+
+  # UPDATE
+  get "/descriptors/:id/edit", :controller => "descriptors", :action => "edit"
+  post "/update_descriptor/:id", :controller => "descriptors", :action => "update"
+
+  # DELETE
+  get "/delete_descriptor/:id", :controller => "descriptors", :action => "destroy"
+  #------------------------------
+
   # Routes for the Tag resource:
   # CREATE
   get "/tags/new", :controller => "tags", :action => "new"

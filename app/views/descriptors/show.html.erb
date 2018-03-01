@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>Descriptor #<%= @descriptor.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Tag</dt>
+      <dd><%= @descriptor.tag_id %></dd>
+
+      <dt>Restaurant</dt>
+      <dd><%= @descriptor.restaurant_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/descriptors" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/descriptors/<%= @descriptor.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_descriptor/<%= @descriptor.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
