@@ -6,6 +6,7 @@ class TagsController < ApplicationController
   end
 
   def show
+    @descriptor = Descriptor.new
     @tag = Tag.find(params[:id])
 
     render("tags/show.html.erb")
