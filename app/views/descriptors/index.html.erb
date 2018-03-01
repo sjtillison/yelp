@@ -17,7 +17,7 @@
       <% @descriptors.each do |descriptor| %>
       <tr>
         <td><%= descriptor.tag.name %></td>
-        <td><%= descriptor.restaurant_id %></td>
+        <td><%= descriptor.restaurant.name %></td>
         <td>
           <a href="/descriptors/<%= descriptor.id %>" class="btn btn-primary">Show</a>
           <a href="/descriptors/<%= descriptor.id %>/edit" class="btn btn-warning">Edit</a>
