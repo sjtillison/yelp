@@ -1,6 +1,7 @@
 class DescriptorsController < ApplicationController
   def index
-    @descriptors = Descriptor.page(params[:page]).per(10)
+    @q = Descriptor.ransack(params[:q])
+    @descriptors = @q.result(:distinct => true).includes(:restaurant, :tag).page(params[:page]).per(10)
 
     render("descriptors/index.html.erb")
   end
